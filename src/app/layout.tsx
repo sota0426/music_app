@@ -7,7 +7,7 @@ const font = Figtree({subsets:["latin"]})
 
 export const metadata={
   title:"Spotify Clone",
-  description:"Listen to music";
+  description:"Listen to music",
 }
 
 export default function RootLayout({
@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={font.classname}
+        className={font.className}
       >
         <Sidebar>
           {children}
