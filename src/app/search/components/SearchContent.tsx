@@ -2,6 +2,7 @@
 
 import MediaItem from "../../../components/MediaItem";
 import { Song } from "../../../../types";
+import LikeButton from "@/components/LikedButton";
 
 interface SearchContentProps{
   songs:Song[];
@@ -28,13 +29,13 @@ const SearchContent =({
           key={song.id}
           className="flex items-centergap-x-4 w-full"
         >
-          <div>
+          <div className="flex-1">
             <MediaItem 
               onClick={()=>{}}
               data={song}
             />
           </div>
-          {/* TODO: Add like button */}
+          <LikeButton songId={song.id} />
         </div>
       ))}
     </div>

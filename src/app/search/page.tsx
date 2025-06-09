@@ -8,6 +8,8 @@ interface SearchPageProps {
   searchParams: Promise<{ title?: string }>;
 }
 
+export const revalidate = 0;
+
 const SearchPage = async ({ searchParams }: SearchPageProps) => {
   const resolvedSearchParams = await searchParams;
   const title = resolvedSearchParams?.title ?? "";
