@@ -1,12 +1,12 @@
 import "./globals.css";
 import { Figtree } from "next/font/google";
 
-import Sidebar from "@/components/Sidebar";
-import SupabaseProvider from "../providers/SupabaseProvider";
-import UserProvider from "../providers/UserProvider";
-import ModalProvider from "../providers/ModalProvider";
-import ToasterProvider from "../providers/ToasterProvider";
-import getSongsByUserId from "./actions/getSongsByUserId";
+import SupabaseProvider from "../../providers/SupabaseProvider";
+import UserProvider from "../../providers/UserProvider";
+import ModalProvider from "../../providers/ModalProvider";
+import ToasterProvider from "../../providers/ToasterProvider";
+import getSongsByUserId from "../../actions/getSongsByUserId";
+import Sidebar from "../components/Sidebar";
 
 const font = Figtree({subsets:["latin"]})
 

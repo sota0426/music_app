@@ -1,7 +1,7 @@
 //src\app\actions\getSongsByTitle.ts
 
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
-import { Song } from "../../../types";
+import { Song } from "../types";
 import { cookies } from "next/headers";
 import getSongs from "./getSongs";
 

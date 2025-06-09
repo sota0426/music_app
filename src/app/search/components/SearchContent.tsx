@@ -1,6 +1,6 @@
 "use client"
 
-import MediaItem from "@/components/MediaItem";
+import MediaItem from "../../../components/MediaItem";
 import { Song } from "../../../../types";
 
 interface SearchContentProps{
@@ -34,6 +34,7 @@ const SearchContent =({
               data={song}
             />
           </div>
+          {/* TODO: Add like button */}
         </div>
       ))}
     </div>
