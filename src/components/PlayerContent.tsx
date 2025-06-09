@@ -62,10 +62,7 @@ const PlayerContent =({
     songUrl , 
     {
       volume:volume,
-      onplay:()=>{
-        setIsPlaying(true);
-        toast.success(songUrl);
-      },
+      onplay:()=> setIsPlaying(true),
       onend:()=>{
         setIsPlaying(false);
         onPlayNext();
