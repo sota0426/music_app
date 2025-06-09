@@ -1,11 +1,11 @@
 import uniqid from "uniqid"
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
-import useUploadModal from "../../hooks/useUploadModal";
+import useUploadModal from "../hooks/useUploadModal";
 import Modal from "./Modal"
 import { useState } from "react";
 import Input from "./Input";
 import Button from "./Button";
-import { useUser } from "../../hooks/useUser";
+import { useUser } from "../hooks/useUser";
 import toast from "react-hot-toast";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useRouter } from "next/navigation";

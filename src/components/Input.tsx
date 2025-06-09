@@ -9,7 +9,7 @@ const Input=forwardRef<HTMLInputElement,InputProps>(({
   className,
   type,
   disabled,
-  ...props,
+  ...props
 },ref)=>{
   return(
     <input 

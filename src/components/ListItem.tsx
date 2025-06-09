@@ -8,7 +8,7 @@ import { FaPlay } from "react-icons/fa";
 interface ListItemProps{
   image:string;
   name:string;
-  href:string;
+  href?:string;
 }
 
 const ListItem:React.FC<ListItemProps> =({

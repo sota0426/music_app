@@ -1,44 +1,28 @@
-"use client"
-
-import Header from "@/components/Header";
-import getSongsByTitle from "../../../actions/getSongsByTitle";
-import SearchInput from "@/components/SearchInput";
+import getSongsByTitle from "@/app/actions/getSongsByTitle";
 import SearchContent from "./components/SearchContent";
-import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
-import { Song } from "../../../types";
+import Header from "@/components/Header";
+import SearchInput from "@/components/SearchInput";
 
-const Search = () => {
-  const searchParams = useSearchParams();
-  const title = searchParams.get("title") || "";
-  const [songs, setSongs] = useState<Song[]>([]);
+interface SearchPageProps {
+  searchParams: Promise<{ title?: string }>;
+}
 
-  useEffect(() => {
-    const fetchSongs = async () => {
-      const result = await getSongsByTitle(title);
-      setSongs(result);
-    };
+const SearchPage = async ({ searchParams }: SearchPageProps) => {
+  const resolvedSearchParams = await searchParams;
+  const title = resolvedSearchParams?.title ?? "";
+  const songs = await getSongsByTitle(title);
 
-    fetchSongs();
-  }, [title]);
-
-
-  return(
-    <div
-      className="bg-neutral-900 rounded-lg h-full w-full overflow-hidden overflow-y-auto"
-    >
+  return (
+    <div className="bg-neutral-900 rounded-lg h-full w-full overflow-hidden overflow-y-auto">
       <Header className="from-bg-neutral-900">
         <div className="mb-2 flex flex-col gap-y-6">
-          <h1 className="text-white text-3xl font-semibold">
-            Search
-          </h1>
+          <h1 className="text-white text-3xl font-semibold">Search</h1>
           <SearchInput />
         </div>
       </Header>
       <SearchContent songs={songs} />
     </div>
-  )
-}
+  );
+};
 
-
-export default Search;
+export default SearchPage;
